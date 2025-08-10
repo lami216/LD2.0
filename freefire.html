@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Fire - LD شحن</title>
+<style>
+  body { font-family: sans-serif; background: #0b0f1a; color: #fff; margin:0; }
+  header, footer { background: #0d1626; padding: 15px; text-align:center; }
+  header a { color: #4db8ff; text-decoration:none; margin:0 10px; }
+  h1 { color: #4db8ff; text-align: center; }
+  .offers { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:15px; padding:20px; }
+  .offer { background: #101a33; border: 1px solid #223; padding:10px; text-align:center; border-radius:8px; }
+  .offer img { width:100%; height:150px; object-fit:cover; border-radius:6px; }
+  .offer h3 { margin:10px 0; color:#4db8ff; }
+  .offer p { margin:5px 0; }
+  button { background: #4db8ff; color:#000; border: none; padding: 8px 15px; cursor:pointer; border-radius:5px; }
+  form { display:none; background: #0d1626; padding: 15px; border-radius: 6px; margin-top: 10px; }
+  input, select { width:100%; padding:8px; margin:5px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">الرئيسية</a>
+  <a href="pubg.html">PUBG</a>
+  <a href="freefire.html">Free Fire</a>
+  <a href="googleplay.html">Google Play</a>
+  <a href="itunes.html">iTunes</a>
+</header>
+
+<h1>Free Fire - ألماس</h1>
+
+<section class="offers">
+  <div class="offer">
+    <img src="https://staticg.sportskeeda.com/editor/2023/03/8c946-16779375872038-1920.jpg" alt="100 Diamonds">
+    <h3>100 Diamonds</h3>
+    <p>السعر: 50 أوقية</p>
+    <button onclick="showForm(this, 'Free Fire', '100 Diamonds')">اطلب الآن</button>
+    <form>
+      <input type="text" placeholder="ID اللاعب" class="uid">
+      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <select class="pay">
+        <option value="بنكيلي">بنكيلي</option>
+        <option value="السداد">السداد</option>
+        <option value="مصرفي">مصرفي</option>
+      </select>
+      <input type="file" class="receipt">
+      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <p class="status"></p>
+    </form>
+  </div>
+
+  <div class="offer">
+    <img src="https://wallpapercave.com/wp/wp8785781.jpg" alt="310 Diamonds">
+    <h3>310 Diamonds</h3>
+    <p>السعر: 145 أوقية</p>
+    <button onclick="showForm(this, 'Free Fire', '310 Diamonds')">اطلب الآن</button>
+    <form>
+      <input type="text" placeholder="ID اللاعب" class="uid">
+      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <select class="pay">
+        <option value="بنكيلي">بنكيلي</option>
+        <option value="السداد">السداد</option>
+        <option value="مصرفي">مصرفي</option>
+      </select>
+      <input type="file" class="receipt">
+      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <p class="status"></p>
+    </form>
+  </div>
+
+  <div class="offer">
+    <img src="https://wallpapercave.com/wp/wp8785785.jpg" alt="520 Diamonds">
+    <h3>520 Diamonds</h3>
+    <p>السعر: 235 أوقية</p>
+    <button onclick="showForm(this, 'Free Fire', '520 Diamonds')">اطلب الآن</button>
+    <form>
+      <input type="text" placeholder="ID اللاعب" class="uid">
+      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <select class="pay">
+        <option value="بنكيلي">بنكيلي</option>
+        <option value="السداد">السداد</option>
+        <option value="مصرفي">مصرفي</option>
+      </select>
+      <input type="file" class="receipt">
+      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <p class="status"></p>
+    </form>
+  </div>
+
+  <div class="offer">
+    <img src="https://wallpapercave.com/wp/wp8785783.jpg" alt="1060 Diamonds">
+    <h3>1060 Diamonds</h3>
+    <p>السعر: 460 أوقية</p>
+    <button onclick="showForm(this, 'Free Fire', '1060 Diamonds')">اطلب الآن</button>
+    <form>
+      <input type="text" placeholder="ID اللاعب" class="uid">
+      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <select class="pay">
+        <option value="بنكيلي">بنكيلي</option>
+        <option value="السداد">السداد</option>
+        <option value="مصرفي">مصرفي</option>
+      </select>
+      <input type="file" class="receipt">
+      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <p class="status"></p>
+    </form>
+  </div>
+
+  <div class="offer">
+    <img src="https://wallpapercave.com/wp/wp8785784.jpg" alt="2180 Diamonds">
+    <h3>2180 Diamonds</h3>
+    <p>السعر: 920 أوقية</p>
+    <button onclick="showForm(this, 'Free Fire', '2180 Diamonds')">اطلب الآن</button>
+    <form>
+      <input type="text" placeholder="ID اللاعب" class="uid">
+      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <select class="pay">
+        <option value="بنكيلي">بنكيلي</option>
+        <option value="السداد">السداد</option>
+        <option value="مصرفي">مصرفي</option>
+      </select>
+      <input type="file" class="receipt">
+      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <p class="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 LD Top-Up | واتساب الدعم: +22241380130</p>
+</footer>
+
+<script>
+let selectedCat = '', selectedOffer = '';
+
+function showForm(btn, cat, offer){
+  selectedCat = cat;
+  selectedOffer = offer;
+  let form = btn.nextElementSibling;
+  form.style.display = form.style.display === 'block' ? 'none' : 'block';
+}
+
+function sendOrder(btn){
+  const form = btn.parentElement;
+  const uid = form.querySelector('.uid').value;
+  const whats = form.querySelector('.whats').value;
+  const pay = form.querySelector('.pay').value;
+  const file = form.querySelector('.receipt').files[0];
+  const status = form.querySelector('.status');
+
+  if(!whats || !file){
+    status.textContent = '⚠️ أدخل رقم واتساب وارفع صورة المعاملة';
+    return;
+  }
+
+  const botToken = "8186686903:AAGxBvjWzcbkxdu5l4GrR9bilH0Ua4AnYkM";
+  const chatId = "6660278825";
+  const formData = new FormData();
+  formData.append('chat_id', chatId);
+  formData.append('caption', `طلب جديد 🎮\n${selectedCat} - ${selectedOffer}\nID: ${uid}\nواتساب: ${whats}\nدفع: ${pay}`);
+  formData.append('photo', file);
+
+  fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+    method: 'POST',
+    body: formData
+  }).then(r=>{
+    status.textContent = '✅ تم إرسال الطلب بنجاح';
+  }).catch(e=>{
+    status.textContent = '❌ حصل خطأ في الإرسال';
+  });
+}
+</script>
+
+</body>
+</html>
