@@ -15,21 +15,38 @@
         background-color: #1a1a1a;
         padding: 15px 20px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
     }
     header h1 {
         color: #1e90ff;
         margin: 0;
     }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
     nav a {
         color: #fff;
         text-decoration: none;
-        margin: 0 10px;
         font-weight: bold;
     }
     nav a:hover {
         color: #1e90ff;
+    }
+    .lang-switch {
+        display: flex;
+        gap: 5px;
+    }
+    .lang-switch button {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
     }
     .hero {
         background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/78/8a/b2/788ab2f1-414d-9407-900d-016e08f3c10b/source/512x512bb.jpg');
@@ -109,6 +126,9 @@
         color: #ccc;
         font-size: 14px;
     }
+    @media (max-width:600px){
+        header { flex-direction: column; align-items:flex-start; }
+    }
 </style>
 </head>
 <body>
@@ -116,16 +136,21 @@
 <header>
     <h1>LD Top-Up</h1>
     <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="pubg.html">PUBG</a>
-        <a href="freefire.html">Free Fire</a>
-        <a href="googleplay.html">Google Play</a>
-        <a href="itunes.html">iTunes</a>
+        <a href="index.html" data-i18n="nav-home">الرئيسية</a>
+        <a href="pubg.html" data-i18n="nav-pubg">PUBG</a>
+        <a href="freefire.html" data-i18n="nav-freefire">Free Fire</a>
+        <a href="googleplay.html" data-i18n="nav-googleplay">Google Play</a>
+        <a href="itunes.html" data-i18n="nav-itunes">iTunes</a>
     </nav>
+    <div class="lang-switch">
+        <button data-lang="ar">🇲🇷 العربية</button>
+        <button data-lang="fr">🇫🇷 Français</button>
+        <button data-lang="en">🇺🇸 English</button>
+    </div>
 </header>
 
 <section class="hero">
-    <h2>بطاقات iTunes / App Store</h2>
+    <h2 data-i18n="itunes-hero">بطاقات iTunes / App Store</h2>
 </section>
 
 <section class="offers">
@@ -133,16 +158,16 @@
         <img src="image/Itunes.jpg">
         <h3>بطاقة $5</h3>
         <p>190 أوقية</p>
-        <button onclick="showForm(this, 'iTunes', 'بطاقة $5')">اطلب الآن</button>
+        <button data-i18n="order" onclick="showForm(this, 'iTunes', 'بطاقة $5')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
@@ -150,16 +175,16 @@
         <img src="image/Itunes.jpg">
         <h3>بطاقة $10</h3>
         <p>380 أوقية</p>
-        <button onclick="showForm(this, 'iTunes', 'بطاقة $10')">اطلب الآن</button>
+        <button data-i18n="order" onclick="showForm(this, 'iTunes', 'بطاقة $10')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
@@ -167,16 +192,16 @@
         <img src="image/Itunes.jpg">
         <h3>بطاقة $15</h3>
         <p>570 أوقية</p>
-        <button onclick="showForm(this, 'iTunes', 'بطاقة $15')">اطلب الآن</button>
+        <button data-i18n="order" onclick="showForm(this, 'iTunes', 'بطاقة $15')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
@@ -184,16 +209,16 @@
         <img src="image/Itunes.jpg">
         <h3>بطاقة $25</h3>
         <p>950 أوقية</p>
-        <button onclick="showForm(this, 'iTunes', 'بطاقة $25')">اطلب الآن</button>
+        <button data-i18n="order" onclick="showForm(this, 'iTunes', 'بطاقة $25')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
@@ -201,25 +226,24 @@
         <img src="image/Itunes.jpg">
         <h3>بطاقة $50</h3>
         <p>1900 أوقية</p>
-        <button onclick="showForm(this, 'iTunes', 'بطاقة $50')">اطلب الآن</button>
+        <button data-i18n="order" onclick="showForm(this, 'iTunes', 'بطاقة $50')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
 </section>
 
-<footer>
-    © 2025 LD Top-Up | واتساب الدعم: +22241380130
-</footer>
+<footer data-i18n="footer">© 2025 LD Top-Up | واتساب الدعم: +22241380130</footer>
 
+<script src="lang.js"></script>
 <script>
 let selectedCat = '', selectedOffer = '';
 
@@ -238,7 +262,7 @@ function sendOrder(btn){
     const status = form.querySelector('.status');
 
     if(!whats || !file){
-        status.textContent = '⚠️ أدخل رقم واتساب وارفع صورة المعاملة';
+        status.textContent = translationsMap['warn'][currentLang];
         return;
     }
 
@@ -253,9 +277,9 @@ function sendOrder(btn){
         method: 'POST',
         body: formData
     }).then(r=>{
-        status.textContent = '✅ تم إرسال الطلب بنجاح';
+        status.textContent = translationsMap['success'][currentLang];
     }).catch(e=>{
-        status.textContent = '❌ حصل خطأ في الإرسال';
+        status.textContent = translationsMap['error'][currentLang];
     });
 }
 </script>

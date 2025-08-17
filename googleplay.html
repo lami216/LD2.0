@@ -15,21 +15,38 @@
         background-color: #1a1a1a;
         padding: 15px 20px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
     }
     header h1 {
         color: #f8c21a;
         margin: 0;
     }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
     nav a {
         color: #fff;
         text-decoration: none;
-        margin: 0 10px;
         font-weight: bold;
     }
     nav a:hover {
         color: #f8c21a;
+    }
+    .lang-switch {
+        display: flex;
+        gap: 5px;
+    }
+    .lang-switch button {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
     }
     .hero {
         background-image: url('https://www.amazon.com/Google-Play-Gift-Code-mail/dp/B074T91QTZ');
@@ -110,6 +127,9 @@
         color: #ccc;
         font-size: 14px;
     }
+    @media (max-width:600px){
+        header { flex-direction: column; align-items: flex-start; }
+    }
 </style>
 </head>
 <body>
@@ -117,110 +137,114 @@
 <header>
     <h1>LD Top-Up</h1>
     <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="pubg.html">PUBG</a>
-        <a href="freefire.html">Free Fire</a>
-        <a href="googleplay.html">Google Play</a>
-        <a href="itunes.html">iTunes</a>
+        <a href="index.html" data-i18n="nav-home">الرئيسية</a>
+        <a href="pubg.html" data-i18n="nav-pubg">PUBG</a>
+        <a href="freefire.html" data-i18n="nav-freefire">Free Fire</a>
+        <a href="googleplay.html" data-i18n="nav-googleplay">Google Play</a>
+        <a href="itunes.html" data-i18n="nav-itunes">iTunes</a>
     </nav>
+    <div class="lang-switch">
+        <button data-lang="ar">🇲🇷 العربية</button>
+        <button data-lang="fr">🇫🇷 Français</button>
+        <button data-lang="en">🇺🇸 English</button>
+    </div>
 </header>
 
 <section class="hero">
-    <h2>عروض بطاقات Google Play</h2>
+    <h2 data-i18n="googleplay-hero">عروض بطاقات Google Play</h2>
 </section>
 
 <section class="offers">
     <div class="offer-card">
         <img src="image/Googleplay.jpg" alt="Google Play 5$">
         <h3>بطاقة Google Play 5$</h3>
-        <p>السعر: 2 دولار ≈ 80 أوقية</p>
-        <button onclick="showForm(this, 'Google Play', 'بطاقة 5$')">اطلب الآن</button>
+        <p><span data-i18n="price">السعر:</span> 2 دولار ≈ 80 أوقية</p>
+        <button data-i18n="order" onclick="showForm(this, 'Google Play', 'بطاقة 5$')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
     <div class="offer-card">
         <img src="image/Googleplay.jpg" alt="Google Play 10$">
         <h3>بطاقة Google Play 10$</h3>
-        <p>السعر: 5 دولار ≈ 200 أوقية</p>
-        <button onclick="showForm(this, 'Google Play', 'بطاقة 10$')">اطلب الآن</button>
+        <p><span data-i18n="price">السعر:</span> 5 دولار ≈ 200 أوقية</p>
+        <button data-i18n="order" onclick="showForm(this, 'Google Play', 'بطاقة 10$')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
     <div class="offer-card">
         <img src="image/Googleplay.jpg" alt="Google Play 15$">
         <h3>بطاقة Google Play 15$</h3>
-        <p>السعر: 7.5 دولار ≈ 300 أوقية</p>
-        <button onclick="showForm(this, 'Google Play', 'بطاقة 15$')">اطلب الآن</button>
+        <p><span data-i18n="price">السعر:</span> 7.5 دولار ≈ 300 أوقية</p>
+        <button data-i18n="order" onclick="showForm(this, 'Google Play', 'بطاقة 15$')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
     <div class="offer-card">
         <img src="image/Googleplay.jpg" alt="Google Play 25$">
         <h3>بطاقة Google Play 25$</h3>
-        <p>السعر: 12 دولار ≈ 480 أوقية</p>
-        <button onclick="showForm(this, 'Google Play', 'بطاقة 25$')">اطلب الآن</button>
+        <p><span data-i18n="price">السعر:</span> 12 دولار ≈ 480 أوقية</p>
+        <button data-i18n="order" onclick="showForm(this, 'Google Play', 'بطاقة 25$')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
     <div class="offer-card">
         <img src="image/Googleplay.jpg" alt="Google Play 50$">
         <h3>بطاقة Google Play 50$</h3>
-        <p>السعر: 23 دولار ≈ 920 أوقية</p>
-        <button onclick="showForm(this, 'Google Play', 'بطاقة 50$')">اطلب الآن</button>
+        <p><span data-i18n="price">السعر:</span> 23 دولار ≈ 920 أوقية</p>
+        <button data-i18n="order" onclick="showForm(this, 'Google Play', 'بطاقة 50$')">اطلب الآن</button>
         <form>
-            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
             <select class="pay">
                 <option value="بنكيلي">بنكيلي</option>
                 <option value="السداد">السداد</option>
                 <option value="مصرفي">مصرفي</option>
             </select>
             <input type="file" class="receipt">
-            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
             <p class="status"></p>
         </form>
     </div>
 </section>
 
-<footer>
-    © 2025 LD Top-Up | واتساب الدعم: +22241380130
-</footer>
+<footer data-i18n="footer">© 2025 LD Top-Up | واتساب الدعم: +22241380130</footer>
 
+<script src="lang.js"></script>
 <script>
 let selectedCat = '', selectedOffer = '';
 
@@ -239,7 +263,7 @@ function sendOrder(btn){
     const status = form.querySelector('.status');
 
     if(!whats || !file){
-        status.textContent = '⚠️ أدخل رقم واتساب وارفع صورة المعاملة';
+        status.textContent = translationsMap['warn'][currentLang];
         return;
     }
 
@@ -254,9 +278,9 @@ function sendOrder(btn){
         method: 'POST',
         body: formData
     }).then(r=>{
-        status.textContent = '✅ تم إرسال الطلب بنجاح';
+        status.textContent = translationsMap['success'][currentLang];
     }).catch(e=>{
-        status.textContent = '❌ حصل خطأ في الإرسال';
+        status.textContent = translationsMap['error'][currentLang];
     });
 }
 </script>
