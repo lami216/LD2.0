@@ -30,7 +30,7 @@ const translationsMap = {
   },
   'error': {
     ar: '❌ حصل خطأ في الإرسال',
-    fr: '❌ Échec de l'envoi',
+    fr: "❌ Échec de l'envoi",
     en: '❌ Failed to send'
   },
   'footer': {
@@ -40,10 +40,11 @@ const translationsMap = {
   }
 };
 
-let currentLang = 'ar';
+let currentLang = localStorage.getItem('lang') || 'ar';
 
 function applyTranslations(lang) {
   currentLang = lang;
+  localStorage.setItem('lang', lang);
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (translationsMap[key] && translationsMap[key][lang]) {
@@ -59,10 +60,22 @@ function applyTranslations(lang) {
 }
 
 function initTranslation() {
-  const buttons = document.querySelectorAll('.lang-switch button');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => applyTranslations(btn.dataset.lang));
-  });
+  const toggle = document.getElementById('lang-toggle');
+  const menu = document.querySelector('.lang-menu');
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    menu.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyTranslations(btn.dataset.lang);
+        menu.style.display = 'none';
+      });
+    });
+  }
+
   applyTranslations(currentLang);
 }
 

@@ -33,20 +33,47 @@
         color: #fff;
         text-decoration: none;
         font-weight: bold;
+        border: 2px solid #0f9d58;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
     nav a:hover {
-        color: #f8c21a;
+        background-color: rgba(15,157,88,0.2);
     }
     .lang-switch {
-        display: flex;
-        gap: 5px;
+        position: relative;
     }
-    .lang-switch button {
+    #lang-toggle {
+        background: none;
+        border: 2px solid #0f9d58;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .lang-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 5px;
+        z-index: 10;
+    }
+    .lang-menu button {
+        display: block;
+        width: 100%;
         background: none;
         border: none;
         color: #fff;
         cursor: pointer;
-        font-weight: bold;
+        padding: 5px 10px;
+        text-align: left;
+    }
+    .lang-menu button:hover {
+        background-color: #333;
     }
     .hero {
         background-image: url('https://www.amazon.com/Google-Play-Gift-Code-mail/dp/B074T91QTZ');
@@ -144,9 +171,12 @@
         <a href="itunes.html" data-i18n="nav-itunes">iTunes</a>
     </nav>
     <div class="lang-switch">
-        <button data-lang="ar">🇲🇷 العربية</button>
-        <button data-lang="fr">🇫🇷 Français</button>
-        <button data-lang="en">🇺🇸 English</button>
+        <button id="lang-toggle">🌐</button>
+        <div class="lang-menu">
+            <button data-lang="ar">🇲🇷 العربية</button>
+            <button data-lang="fr">🇫🇷 Français</button>
+            <button data-lang="en">🇺🇸 English</button>
+        </div>
     </div>
 </header>
 
