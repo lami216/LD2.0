@@ -6,8 +6,12 @@
 <title>PUBG Mobile - LD شحن</title>
 <style>
   body { font-family: sans-serif; background: #0d0d0d; color: #fff; margin:0; }
-  header, footer { background: #1a1a1a; padding: 15px; text-align:center; }
-  header a { color: gold; text-decoration:none; margin:0 10px; }
+  header { background: #1a1a1a; padding: 15px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; }
+  header nav { display:flex; flex-wrap:wrap; gap:10px; }
+  header nav a { color: gold; text-decoration:none; }
+  .lang-switch { display:flex; gap:5px; }
+  .lang-switch button { background:none; border:none; color:gold; cursor:pointer; font-weight:bold; }
+  footer { background: #1a1a1a; padding: 15px; text-align:center; }
   h1 { color: gold; text-align: center; }
   .offers { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:15px; padding:20px; }
   .offer { background: #1a1a1a; border: 1px solid #333; padding:10px; text-align:center; border-radius:8px; }
@@ -17,36 +21,44 @@
   button { background: gold; border: none; padding: 8px 15px; cursor:pointer; border-radius:5px; }
   form { display:none; background: #111; padding: 15px; border-radius: 6px; margin-top: 10px; }
   input, select { width:100%; padding:8px; margin:5px 0; }
+  @media (max-width:600px){ header{flex-direction:column; align-items:flex-start;} }
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html">الرئيسية</a>
-  <a href="pubg.html">PUBG</a>
-  <a href="freefire.html">Free Fire</a>
-  <a href="googleplay.html">Google Play</a>
-  <a href="itunes.html">iTunes</a>
+  <nav>
+    <a href="index.html" data-i18n="nav-home">الرئيسية</a>
+    <a href="pubg.html" data-i18n="nav-pubg">PUBG</a>
+    <a href="freefire.html" data-i18n="nav-freefire">Free Fire</a>
+    <a href="googleplay.html" data-i18n="nav-googleplay">Google Play</a>
+    <a href="itunes.html" data-i18n="nav-itunes">iTunes</a>
+  </nav>
+  <div class="lang-switch">
+    <button data-lang="ar">🇲🇷 العربية</button>
+    <button data-lang="fr">🇫🇷 Français</button>
+    <button data-lang="en">🇺🇸 English</button>
+  </div>
 </header>
 
-<h1>PUBG Mobile - شدات</h1>
+<h1 data-i18n="pubg-title">PUBG Mobile - شدات</h1>
 
 <section class="offers">
   <div class="offer">
     <img src="image/UC.jpg" alt="60 UC">
     <h3>60 UC</h3>
-    <p>السعر: 55 أوقية</p>
-    <button onclick="showForm(this, 'PUBG', '60 UC')">اطلب الآن</button>
+    <p><span data-i18n="price">السعر:</span> 55 أوقية</p>
+    <button data-i18n="order" onclick="showForm(this, 'PUBG', '60 UC')">اطلب الآن</button>
     <form>
-      <input type="text" placeholder="رقم اللاعب" class="uid">
-      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <input type="text" placeholder="رقم اللاعب" class="uid" data-i18n-placeholder="player-id">
+      <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
       <select class="pay">
         <option value="بنكيلي">بنكيلي</option>
         <option value="السداد">السداد</option>
         <option value="مصرفي">مصرفي</option>
       </select>
       <input type="file" class="receipt">
-      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
       <p class="status"></p>
     </form>
   </div>
@@ -54,18 +66,18 @@
   <div class="offer">
     <img src="image/UC.jpg" alt="325 UC">
     <h3>325 UC</h3>
-    <p>السعر: 270 أوقية</p>
-    <button onclick="showForm(this, 'PUBG', '325 UC')">اطلب الآن</button>
+    <p><span data-i18n="price">السعر:</span> 270 أوقية</p>
+    <button data-i18n="order" onclick="showForm(this, 'PUBG', '325 UC')">اطلب الآن</button>
     <form>
-      <input type="text" placeholder="رقم اللاعب" class="uid">
-      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <input type="text" placeholder="رقم اللاعب" class="uid" data-i18n-placeholder="player-id">
+      <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
       <select class="pay">
         <option value="بنكيلي">بنكيلي</option>
         <option value="السداد">السداد</option>
         <option value="مصرفي">مصرفي</option>
       </select>
       <input type="file" class="receipt">
-      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
       <p class="status"></p>
     </form>
   </div>
@@ -73,18 +85,18 @@
   <div class="offer">
     <img src="image/UC.jpg" alt="660 UC">
     <h3>660 UC</h3>
-    <p>السعر: 540 أوقية</p>
-    <button onclick="showForm(this, 'PUBG', '660 UC')">اطلب الآن</button>
+    <p><span data-i18n="price">السعر:</span> 540 أوقية</p>
+    <button data-i18n="order" onclick="showForm(this, 'PUBG', '660 UC')">اطلب الآن</button>
     <form>
-      <input type="text" placeholder="رقم اللاعب" class="uid">
-      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <input type="text" placeholder="رقم اللاعب" class="uid" data-i18n-placeholder="player-id">
+      <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
       <select class="pay">
         <option value="بنكيلي">بنكيلي</option>
         <option value="السداد">السداد</option>
         <option value="مصرفي">مصرفي</option>
       </select>
       <input type="file" class="receipt">
-      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
       <p class="status"></p>
     </form>
   </div>
@@ -92,18 +104,18 @@
   <div class="offer">
     <img src="image/UC.jpg" alt="1800 UC">
     <h3>1800 UC</h3>
-    <p>السعر: 1460 أوقية</p>
-    <button onclick="showForm(this, 'PUBG', '1800 UC')">اطلب الآن</button>
+    <p><span data-i18n="price">السعر:</span> 1460 أوقية</p>
+    <button data-i18n="order" onclick="showForm(this, 'PUBG', '1800 UC')">اطلب الآن</button>
     <form>
-      <input type="text" placeholder="رقم اللاعب" class="uid">
-      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <input type="text" placeholder="رقم اللاعب" class="uid" data-i18n-placeholder="player-id">
+      <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
       <select class="pay">
         <option value="بنكيلي">بنكيلي</option>
         <option value="السداد">السداد</option>
         <option value="مصرفي">مصرفي</option>
       </select>
       <input type="file" class="receipt">
-      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
       <p class="status"></p>
     </form>
   </div>
@@ -111,27 +123,26 @@
   <div class="offer">
     <img src="image/UC.jpg" alt="3850 UC">
     <h3>3850 UC</h3>
-    <p>السعر: 2920 أوقية</p>
-    <button onclick="showForm(this, 'PUBG', '3850 UC')">اطلب الآن</button>
+    <p><span data-i18n="price">السعر:</span> 2920 أوقية</p>
+    <button data-i18n="order" onclick="showForm(this, 'PUBG', '3850 UC')">اطلب الآن</button>
     <form>
-      <input type="text" placeholder="رقم اللاعب" class="uid">
-      <input type="text" placeholder="رقم واتسابك" class="whats">
+      <input type="text" placeholder="رقم اللاعب" class="uid" data-i18n-placeholder="player-id">
+      <input type="text" placeholder="رقم واتسابك" class="whats" data-i18n-placeholder="whats">
       <select class="pay">
         <option value="بنكيلي">بنكيلي</option>
         <option value="السداد">السداد</option>
         <option value="مصرفي">مصرفي</option>
       </select>
       <input type="file" class="receipt">
-      <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+      <button type="button" data-i18n="send" onclick="sendOrder(this)">إرسال الطلب</button>
       <p class="status"></p>
     </form>
   </div>
 </section>
 
-<footer>
-  <p>© 2025 LD Top-Up | واتساب الدعم: +22241380130</p>
-</footer>
+<footer data-i18n="footer">© 2025 LD Top-Up | واتساب الدعم: +22241380130</footer>
 
+<script src="lang.js"></script>
 <script>
 let selectedCat = '', selectedOffer = '';
 
@@ -151,7 +162,7 @@ function sendOrder(btn){
   const status = form.querySelector('.status');
 
   if(!whats || !file){
-    status.textContent = '⚠️ أدخل رقم واتساب وارفع صورة المعاملة';
+    status.textContent = translationsMap['warn'][currentLang];
     return;
   }
 
@@ -166,9 +177,9 @@ function sendOrder(btn){
     method: 'POST',
     body: formData
   }).then(r=>{
-    status.textContent = '✅ تم إرسال الطلب بنجاح';
+    status.textContent = translationsMap['success'][currentLang];
   }).catch(e=>{
-    status.textContent = '❌ حصل خطأ في الإرسال';
+    status.textContent = translationsMap['error'][currentLang];
   });
 }
 </script>

@@ -15,21 +15,38 @@
         background-color: #1a1a1a;
         padding: 15px 20px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        gap: 10px;
     }
     header h1 {
         color: #f8c21a;
         margin: 0;
     }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
     nav a {
         color: #fff;
         text-decoration: none;
-        margin: 0 10px;
         font-weight: bold;
     }
     nav a:hover {
         color: #f8c21a;
+    }
+    .lang-switch {
+        display: flex;
+        gap: 5px;
+    }
+    .lang-switch button {
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
     }
     .hero {
         background-image: url('https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg');
@@ -83,6 +100,15 @@
         color: #ccc;
         font-size: 14px;
     }
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .hero {
+            height: 180px;
+        }
+    }
 </style>
 </head>
 <body>
@@ -90,16 +116,21 @@
 <header>
     <h1>LD Top-Up</h1>
     <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="pubg.html">PUBG</a>
-        <a href="freefire.html">Free Fire</a>
-        <a href="googleplay.html">Google Play</a>
-        <a href="itunes.html">iTunes</a>
+        <a href="index.html" data-i18n="nav-home">الرئيسية</a>
+        <a href="pubg.html" data-i18n="nav-pubg">PUBG</a>
+        <a href="freefire.html" data-i18n="nav-freefire">Free Fire</a>
+        <a href="googleplay.html" data-i18n="nav-googleplay">Google Play</a>
+        <a href="itunes.html" data-i18n="nav-itunes">iTunes</a>
     </nav>
+    <div class="lang-switch">
+        <button data-lang="ar">🇲🇷 العربية</button>
+        <button data-lang="fr">🇫🇷 Français</button>
+        <button data-lang="en">🇺🇸 English</button>
+    </div>
 </header>
 
 <section class="hero">
-    <h2>شحن فوري وآمن لجميع الألعاب والبطاقات</h2>
+    <h2 data-i18n="hero-index">شحن فوري وآمن لجميع الألعاب والبطاقات</h2>
 </section>
 
 <section class="categories">
@@ -121,9 +152,11 @@
     </div>
 </section>
 
-<footer>
+<footer data-i18n="footer">
     © 2025 LD Top-Up | واتساب الدعم: +22241380130
 </footer>
+
+<script src="lang.js"></script>
 
 </body>
 </html>
