@@ -33,20 +33,47 @@
         color: #fff;
         text-decoration: none;
         font-weight: bold;
+        border: 2px solid #f8c21a;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
     nav a:hover {
-        color: #f8c21a;
+        background-color: rgba(248,194,26,0.2);
     }
     .lang-switch {
-        display: flex;
-        gap: 5px;
+        position: relative;
     }
-    .lang-switch button {
+    #lang-toggle {
+        background: none;
+        border: 2px solid #f8c21a;
+        color: #fff;
+        cursor: pointer;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .lang-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 5px;
+        z-index: 10;
+    }
+    .lang-menu button {
+        display: block;
+        width: 100%;
         background: none;
         border: none;
         color: #fff;
         cursor: pointer;
-        font-weight: bold;
+        padding: 5px 10px;
+        text-align: left;
+    }
+    .lang-menu button:hover {
+        background-color: #333;
     }
     .hero {
         background-image: url('https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg');
@@ -123,9 +150,12 @@
         <a href="itunes.html" data-i18n="nav-itunes">iTunes</a>
     </nav>
     <div class="lang-switch">
-        <button data-lang="ar">🇲🇷 العربية</button>
-        <button data-lang="fr">🇫🇷 Français</button>
-        <button data-lang="en">🇺🇸 English</button>
+        <button id="lang-toggle">🌐</button>
+        <div class="lang-menu">
+            <button data-lang="ar">🇲🇷 العربية</button>
+            <button data-lang="fr">🇫🇷 Français</button>
+            <button data-lang="en">🇺🇸 English</button>
+        </div>
     </div>
 </header>
 
@@ -135,7 +165,7 @@
 
 <section class="categories">
     <div class="category-card" onclick="location.href='pubg.html'">
-        <img src="https://cdn1.dotesports.com/wp-content/uploads/2023/06/02150928/pubg-mobile.jpg" alt="PUBG Mobile">
+        <img src="image/UC.jpg" alt="PUBG Mobile">
         <h3>PUBG Mobile</h3>
     </div>
     <div class="category-card" onclick="location.href='freefire.html'">
@@ -143,11 +173,11 @@
         <h3>Free Fire</h3>
     </div>
     <div class="category-card" onclick="location.href='googleplay.html'">
-        <img src="https://www.androidauthority.com/wp-content/uploads/2021/05/Google-Play-Store-Logo-2021-920x470.jpg" alt="Google Play">
+        <img src="image/Googleplay.jpg" alt="Google Play">
         <h3>Google Play</h3>
     </div>
     <div class="category-card" onclick="location.href='itunes.html'">
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/78/8a/b2/788ab2f1-414d-9407-900d-016e08f3c10b/source/512x512bb.jpg" alt="iTunes">
+        <img src="image/Itunes.jpg" alt="iTunes">
         <h3>iTunes</h3>
     </div>
 </section>
