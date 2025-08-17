@@ -4,6 +4,10 @@ const translationsMap = {
   'nav-freefire': { ar: 'Free Fire', fr: 'Free Fire', en: 'Free Fire' },
   'nav-googleplay': { ar: 'Google Play', fr: 'Google Play', en: 'Google Play' },
   'nav-itunes': { ar: 'iTunes', fr: 'iTunes', en: 'iTunes' },
+  'cat-pubg': { ar: 'ببجي موبايل', fr: 'PUBG Mobile', en: 'PUBG Mobile' },
+  'cat-freefire': { ar: 'فري فاير', fr: 'Free Fire', en: 'Free Fire' },
+  'cat-googleplay': { ar: 'جوجل بلاي', fr: 'Google Play', en: 'Google Play' },
+  'cat-itunes': { ar: 'آيتونز', fr: 'iTunes', en: 'iTunes' },
   'hero-index': {
     ar: 'شحن فوري وآمن لجميع الألعاب والبطاقات',
     fr: 'Recharge instantanée et sécurisée pour tous les jeux et cartes',
