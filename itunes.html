@@ -78,6 +78,30 @@
         margin: 0;
         color: #ccc;
     }
+    button {
+        background-color: #1e90ff;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    button:hover {
+        background-color: #187bcd;
+    }
+    form {
+        display: none;
+        background-color: #1a1a1a;
+        padding: 15px;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+    input, select {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+    }
     footer {
         background-color: #1a1a1a;
         padding: 10px;
@@ -109,32 +133,132 @@
         <img src="image/Itunes.jpg">
         <h3>بطاقة $5</h3>
         <p>190 أوقية</p>
+        <button onclick="showForm(this, 'iTunes', 'بطاقة $5')">اطلب الآن</button>
+        <form>
+            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <select class="pay">
+                <option value="بنكيلي">بنكيلي</option>
+                <option value="السداد">السداد</option>
+                <option value="مصرفي">مصرفي</option>
+            </select>
+            <input type="file" class="receipt">
+            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <p class="status"></p>
+        </form>
     </div>
     <div class="offer-card">
         <img src="image/Itunes.jpg">
         <h3>بطاقة $10</h3>
         <p>380 أوقية</p>
+        <button onclick="showForm(this, 'iTunes', 'بطاقة $10')">اطلب الآن</button>
+        <form>
+            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <select class="pay">
+                <option value="بنكيلي">بنكيلي</option>
+                <option value="السداد">السداد</option>
+                <option value="مصرفي">مصرفي</option>
+            </select>
+            <input type="file" class="receipt">
+            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <p class="status"></p>
+        </form>
     </div>
     <div class="offer-card">
         <img src="image/Itunes.jpg">
         <h3>بطاقة $15</h3>
         <p>570 أوقية</p>
+        <button onclick="showForm(this, 'iTunes', 'بطاقة $15')">اطلب الآن</button>
+        <form>
+            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <select class="pay">
+                <option value="بنكيلي">بنكيلي</option>
+                <option value="السداد">السداد</option>
+                <option value="مصرفي">مصرفي</option>
+            </select>
+            <input type="file" class="receipt">
+            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <p class="status"></p>
+        </form>
     </div>
     <div class="offer-card">
         <img src="image/Itunes.jpg">
         <h3>بطاقة $25</h3>
         <p>950 أوقية</p>
+        <button onclick="showForm(this, 'iTunes', 'بطاقة $25')">اطلب الآن</button>
+        <form>
+            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <select class="pay">
+                <option value="بنكيلي">بنكيلي</option>
+                <option value="السداد">السداد</option>
+                <option value="مصرفي">مصرفي</option>
+            </select>
+            <input type="file" class="receipt">
+            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <p class="status"></p>
+        </form>
     </div>
     <div class="offer-card">
         <img src="image/Itunes.jpg">
         <h3>بطاقة $50</h3>
         <p>1900 أوقية</p>
+        <button onclick="showForm(this, 'iTunes', 'بطاقة $50')">اطلب الآن</button>
+        <form>
+            <input type="text" placeholder="رقم واتسابك" class="whats">
+            <select class="pay">
+                <option value="بنكيلي">بنكيلي</option>
+                <option value="السداد">السداد</option>
+                <option value="مصرفي">مصرفي</option>
+            </select>
+            <input type="file" class="receipt">
+            <button type="button" onclick="sendOrder(this)">إرسال الطلب</button>
+            <p class="status"></p>
+        </form>
     </div>
 </section>
 
 <footer>
     © 2025 LD Top-Up | واتساب الدعم: +22241380130
 </footer>
+
+<script>
+let selectedCat = '', selectedOffer = '';
+
+function showForm(btn, cat, offer){
+    selectedCat = cat;
+    selectedOffer = offer;
+    const form = btn.nextElementSibling;
+    form.style.display = form.style.display === 'block' ? 'none' : 'block';
+}
+
+function sendOrder(btn){
+    const form = btn.parentElement;
+    const whats = form.querySelector('.whats').value;
+    const pay = form.querySelector('.pay').value;
+    const file = form.querySelector('.receipt').files[0];
+    const status = form.querySelector('.status');
+
+    if(!whats || !file){
+        status.textContent = '⚠️ أدخل رقم واتساب وارفع صورة المعاملة';
+        return;
+    }
+
+    const botToken = "8186686903:AAGxBvjWzcbkxdu5l4GrR9bilH0Ua4AnYkM";
+    const chatId = "6660278825";
+    const formData = new FormData();
+    formData.append('chat_id', chatId);
+    formData.append('caption', `طلب جديد 🎮\n${selectedCat} - ${selectedOffer}\nواتساب: ${whats}\nدفع: ${pay}`);
+    formData.append('photo', file);
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+        method: 'POST',
+        body: formData
+    }).then(r=>{
+        status.textContent = '✅ تم إرسال الطلب بنجاح';
+    }).catch(e=>{
+        status.textContent = '❌ حصل خطأ في الإرسال';
+    });
+}
+</script>
 
 </body>
 </html>
